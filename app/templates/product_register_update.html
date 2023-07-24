@@ -1,0 +1,51 @@
+{% extends 'main.html' %}
+
+<title>{% block title %} Product Register {% endblock %}</title>
+
+
+{% block content %}
+<form method="post" action="/commitChanges/{{ product.id }}" class="container p-3">
+    <h3>Update the Product Info</h3>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-2">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" placeholder="EX: Camisa estampada..." class="form-control" id="description" name="description" value="{{ product.description }}">
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-2">
+            <label for="url" class="form-label">Url</label>
+            <input type="text" placeholder="Type the url of product" class="form-control" id="url" name="url" value="{{ product.url }}">
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-2">
+            <label for="product-value" class="form-label">Product value</label>
+            <input type="number" placeholder="$12,80" step="0.01" min="0.01" class="form-control" id="product-value" name="product_value" value="{{ product.price }}">
+        </div>
+    </div>
+    <div class="container text-center">
+        <button class="btn btn-primary mt-3" type="submit">Set Changes</button>
+    </div>
+</form>
+
+<section class="container p-3 bg-light">
+    <p class="h3">Data Preview</p>
+    <div class="col-8 col-sm-4 col-md-4 col-lg-3 col-xl-3 p-1 mb-2 mx-0">
+        <a href="">
+        <div class="card product">
+            <img id="card-url" src="{{ product.url }}" alt="Product Image" class="img-fluid w-100 img">
+            <div class="p-1">
+                <p class="custom-text" id="card-description">{{ product.description }}</p>
+                <div class="row">
+                    <div class="col-8">
+                        <p class="price m-0" id="card-price">R${{ product.price }}</p>
+                    </a>
+                    </div>
+                    <div class="col-4 align-self-center">
+                        <i class="heart-icon fa-sharp fa-solid fa-heart icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="{{ url_for('static', filename='/js/script.js') }}" crossorigin="anonymous"></script>
+{% endblock %}
+

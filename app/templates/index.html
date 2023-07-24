@@ -1,0 +1,93 @@
+{% extends 'main.html' %}
+
+
+<title> {% block title %} Bem vindo! {% endblock %}</title>
+
+
+<section class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-3">
+    {% block aside_left %}
+    <div class="row">
+        <aside class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 bg-light">
+            <h3>Most Popular</h3>
+            <div class="row p-1">
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 my-2">
+                    <div class="card">
+                        <img src="{{ first_most_famous.url }}" alt="" class="img-fluid w-100 img">
+                        <p class="custom-text">Confira!</p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 my-2">
+                    <div class="card">
+                        <img src="{{ second_most_famous.url }}" alt="" class="img-fluid w-100 img">
+                        <p class="custom-text">Confira!</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row g-3">
+                <div class="col">
+                    <h4>More about the cloches</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, cupiditate facilis sunt
+                        corporis, iste, quasi commodi tempora inventore officia aliquid alias iusto aut sint
+                        recusandae perferendis consectetur incidunt fugiat minima.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>More about the cloches</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, cupiditate facilis sunt
+                        corporis, iste, quasi commodi tempora inventore officia aliquid alias iusto aut sint
+                        recusandae perferendis consectetur incidunt fugiat minima.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+            </div>
+        </aside>
+    {% endblock %}
+
+        {% block content %}
+        <section class="col-12 col-sm-12 col-md-8 col-lg-7 col-xl-7 pt-2 products">
+            <h2>Main Products</h2>
+            <div class="row">
+                {% for product in products %}
+                <div class="col-6 col-sm-4 col-md-4 col-lg-4 col-xl-3 p-1 mb-2 mx-0">
+                    <a href="/view-details/{{ product.id }}">
+                    <div class="card product">
+                        <img src=" {{ product.url }} " alt="" class="img-fluid w-100 img">
+                        <div class="p-1">
+                            <p class="custom-text">{{ product.description }}</p>
+                            <div class="row">
+                                <div class="col-8">
+                                    <p class="price m-0">R$ {{ product.price }}</p>
+                                </a>
+                                </div>
+                                <div class="col-4 align-self-center">
+                                    <a href="/addFavorite/{{ product.id }}" class=""><i class="icon heart-icon fa-beat fa-sharp fa-solid fa-heart"></i></a>
+                                    <a href="/update/{{ product.id }}" class=""><i class="text-right icon fa-solid fa-pen" style="color: #534f4f;"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        {% endblock %}
+
+
+        {% block aside_right %}
+        <aside class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 bg-light">
+            <h3>Add More Products</h3>
+            <div class="text-center">
+                <a href="/register" class="btn btn-secondary">Add More Products</a>
+            </div>
+            <hr>
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quae, consequuntur quam quasi aliquam alias labore tempore atque dignissimos quia dolor veritatis distinctio libero facilis laboriosam illum temporibus, quibusdam earum ipsam? Officiis quo saepe possimus cumque, eius rerum minima vero. Consequatur officia quasi dignissimos voluptatem!</div>
+        </aside>
+        {% endblock %}
+    </div>
+</section>
+
+

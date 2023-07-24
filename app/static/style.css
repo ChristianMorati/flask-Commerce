@@ -1,0 +1,94 @@
+:root {
+    --img-size: 220px;
+    --icon-size: .9em !important;
+}
+
+body {
+    font-size: 90%;
+}
+
+.card {
+    user-select: none;
+    border-radius: 0px;
+}
+
+.price {
+    color: rgb(22, 117, 22);
+    /* font-size: 1.1em; */
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.discount-price {
+    color: red;
+    font-weight: bold;
+    background: yellow;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+form {
+    border-radius: .5rem;
+}
+
+.nav-link {
+    text-transform: capitalize;
+}
+
+.btn {
+    border-radius: .5rem
+}
+
+.heart-icon {
+    color: rgba(196, 12, 12, 0.9);
+}
+
+.custom-text {
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    padding: 0;
+    margin: 0;
+}
+
+.product a {
+    text-decoration: none;
+    color: rgb(90, 91, 92);
+}
+
+.product {
+    transition: all ease-out .2s;
+}
+
+.img {
+    height: var(--img-size);
+    object-fit: cover;
+}
+
+.icon { font-size: var(--icon-size)}
+
+@media screen and (min-width: 400px) {}
+
+@media screen and (min-width: 768px) {
+
+    .img {
+        height: calc(var(--img-size) * 1.1);
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .img {
+        height: calc(var(--img-size) * 1.2);
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .products {
+        /* background: linear-gradient(rgb(242, 219, 219) 50%, rgb(210, 244, 255)); */
+        padding: 0 5%;
+    }
+
+    .product:hover {
+        border: 1px solid rgb(255, 255, 255);
+        box-shadow: 1px 1px 5px 1px rgba(56, 53, 53, 0.2);
+        transform: scale(1.02);
+        /* background-color: rgba(255, 255, 255, .5); */
+    }
+}
+

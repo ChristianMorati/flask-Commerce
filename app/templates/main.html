@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+<body>
+    <header class="container-fluid">
+        <nav class="row navbar navbar-light bg-light">
+            <div class="col col-sm-4 col-md-4 align-content-center">
+                <i class="heart-icon fa-sharp fa-solid fa-heart"
+                    style="font-size: .9em; letter-spacing: 1px;">commerce</i>
+            </div>
+            <div class="col col-sm-4 col-md-4 d-flex justify-content-end">
+                <a href="" class="btn btn-primary mx-1">Sing up</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="container-fluid">
+        {% block aside_left %} {% endblock %}
+            
+        {% block content %} {% endblock %}
+            
+        {% block aside_right %} {% endblock %}
+    </main>
+
+    <footer class="container-fluid bg-light text-center">
+        <i class="heart-icon fa-sharp fa-solid fa-heart my-3"
+            style="letter-spacing: 2px;">commerce</i><sup>&reg;</sup>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/f31aa1f33b.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
